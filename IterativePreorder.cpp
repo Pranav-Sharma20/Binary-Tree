@@ -1,4 +1,4 @@
-// HEADER FiLES and DECLARATION
+//HEADER FiLES and DECLARATION
 #include <bits/stdc++.h>
 using namespace std;
 // This is TreeNode Class to define the tree node
