@@ -18,6 +18,8 @@ TreeNode * newNode(int data) {
     return node;
 }
 
+// This is the same function that we wrote for finding the max height
+// Just we added two lines only
 int MaxHeight(TreeNode * root)
 {
     if(root == NULL) return 0;
@@ -25,6 +27,7 @@ int MaxHeight(TreeNode * root)
     int lh = MaxHeight(root->left);
     int rh = MaxHeight(root->right);
     
+    // Tese two lines were added
     if(lh == -1 || rh == -1) return -1;
     if(abs(lh-rh) > 1) return -1;
 
@@ -35,7 +38,10 @@ int MaxHeight(TreeNode * root)
 bool Balaced_Or_Not (TreeNode * root)
 {
     int a = MaxHeight(root);
+    
+    // This function will return -1 if the abs(leftheight - rightheight) > 1
     if(a == -1) return false;
+    // Else it will return the height only
     else return true;
 }
 
