@@ -34,7 +34,7 @@ int MaxHeight(TreeNode * root)
     return 1+max(lh, rh);
 }
 
-
+// It is an optimal approach T.C. = O(n)
 bool Balaced_Or_Not (TreeNode * root)
 {
     int a = MaxHeight(root);
