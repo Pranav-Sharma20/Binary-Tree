@@ -38,7 +38,7 @@ int diameterOfBinaryTree(TreeNode* root){
 
 
 int main() {
-    int i, j;
+    
     TreeNode * root = newNode(3);
     root -> left = newNode(9);
     root -> right = newNode(20);
