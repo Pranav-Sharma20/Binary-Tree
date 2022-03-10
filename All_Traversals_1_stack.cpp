@@ -76,7 +76,7 @@ vector<vector<int>> AllTraversal(TreeNode * root)
 
 
 int main() {
-    int i, j;
+    //int i, j; why you have declared and not use it.
     TreeNode * root = newNode(3);
     root -> left = newNode(9);
     root -> right = newNode(20);
