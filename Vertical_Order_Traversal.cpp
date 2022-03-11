@@ -19,9 +19,21 @@ TreeNode * newNode(int data) {
 }
 
 vector<vector<int>> verticalTraversal(TreeNode* root) {
-        map<int, map<int, multiset<int>>> nodes;
-        queue<pair<TreeNode *, pair<int, int>>> todo;
         
+        map<int, map<int, multiset<int>>> nodes;
+/*           |        |            |
+        vertical    Level    Multiset for multiple
+                             values on each level
+*/  
+// Didn't used set because it will not store the nodes with same value
+
+        // Declared Queue for simple level order traversal.
+        queue<pair<TreeNode *, pair<int, int>>> todo;
+/*                    |              |    |
+                    Node        vertical  Level
+*/          
+        
+        // Initially push root and {0,0} coordinate
         todo.push({root,{0,0}});
         
         while(!todo.empty()){

@@ -20,7 +20,13 @@ TreeNode * newNode(int data) {
 
 vector<int> Top_View (TreeNode * root)
 {
+    vector<int> ans;
+    if(root == NULL) return ans;
+
+    // Declared Queue for doing level order Traversal
     queue<pair<TreeNode* , int>> todo;
+
+    // Declared a map to store values mapped with its x-axis coordinates
     map<int, int> nodes;
 
     todo.push({root, 0});
@@ -31,6 +37,19 @@ vector<int> Top_View (TreeNode * root)
 
         int x = p.second;
 
+        // insert values in map only when we are visiting the node
+        // for that coordinate for the first time only
+        /*
+                    3
+                   /  \
+                  4    7
+                 / \
+                5   6 
+
+            see the above example when we see from the top we won't see 6 instead
+            we will see 3 so we will insert 3 in the map but when again the value 6 comes
+            on the same coordinate we will not insert that in our map
+        */
         if(nodes.find(x) == nodes.end()){
             nodes[x] = p.first -> val;
         }
@@ -45,7 +64,6 @@ vector<int> Top_View (TreeNode * root)
             todo.push({p.first -> right, x+1});
         }
     }
-    vector<int> ans;
 
     for(auto p : nodes)
     {
