@@ -42,11 +42,13 @@ vector<int> preorderTraversal(TreeNode *root)
 int main()
 {
     
-    TreeNode *root = newNode(3);
-    root->left = newNode(9);
-    root->right = newNode(20);
-    root->right->left = newNode(15);
-    root->right->right = newNode(7);
+    TreeNode * root = newNode(3);
+    root -> left = newNode(9);
+    root -> right = newNode(9);
+    root -> left -> left = newNode(15);
+    root -> left -> right = newNode(7);
+    root -> right -> left = newNode(15);
+    root -> right -> right = newNode(7);
 
     vector<int> ans;
     ans = preorderTraversal(root);
